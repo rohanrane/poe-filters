@@ -1,26 +1,18 @@
 #Field 0, Quest
-
 #Field 1, GGm8
-
 #Field 2, Currency/Recipe
-
 #Field 3, Gems
-
 #Field 4, Uniques and Rares
-
 #Field 5, Flasks
-
 #Field 6, Mapping Configuration
-
 #Field 7, ETC
-
 #Field 8, Fade the rest
-
 
 #Field 0, Quest
 Show
     Class "Quest Items" "Labyrinth Item" "Labyrinth Trinket" "Labyrinth Map Item" "Incursion Item" "Delve Socketable Currency"
     SetTextColor 255 0 0
+    MinimapIcon 0 Red Triangle
 
 
 #Field 1, GGm8
@@ -37,9 +29,10 @@ Show
 Show
     BaseType "Mirror of Kalandra" "Rhoa Feather" "Divine Orb" "Exalted Orb"
     SetTextColor 255 0 204
+    SetBorderColor 255 0 204
     PlayAlertSound 5 100
     SetFontSize 40
-
+    MinimapIcon 0 Green Diamond
 
 #Field 2, Currency/Recipe
 Show
@@ -48,13 +41,40 @@ Show
 
 Show
     Class Currency
-    BaseType "Essence" "Remnant of Corruption"
-    SetTextColor 30 144 255 
+    BaseType "Shrieking Essence of" "Essence of Hysteria" "Essence of Insanity" "Essence of Horror" "Essence of Delirium" "Deafening Essence of" "Remnant of Corruption"
+    SetTextColor 30 144 255
+    SetBorderColor 30 144 255
+
+Hide
+	Class Currency
+	BaseType "Whispering Essence of" "Muttering Essence of" "Weeping Essence of" "Wailing Essence of"
+
+Show
+    Class Currency
+    BaseType "Screaming Essence of"
+    SetTextColor 30 144 255
+    SetBorderColor 30 144 255
+
+Show
+	Class Currency
+	BaseType "Chaos Orb" "Regal Orb" "Vaal Orb" "Gemcutter's Prism" "Master Cartographer's Sextant" "Journeyman Cartographer's Sextant" "Harbinger's Orb" "Ancient Orb" "Apprentice Cartographer's Sextant"
+    SetFontSize 45
+	SetTextColor 0 255 0
+	SetBorderColor 0 255 0
+	SetFontSize 35
+	PlayAlertSound 5 100
+	PlayEffect Green
+
+Show
+	Class Currency
+	BaseType "Orb of Fusing" "Orb of Alchemy" "Cartographer's Chisel" "Blessed Orb" "Engineer's Orb" "Orb of Horizons" "Orb of Binding" "Bestiary Orb" "Orb of Scouring" "Orb of Regret"
+	SetTextColor 0 255 0
+	SetBorderColor 0 255 0
+	PlayAlertSound 5 50
 
 Show
     Class Currency
     SetTextColor 0 255 0
-    PlayAlertSound 5 50
 
 Show
     LinkedSockets 5
@@ -80,163 +100,182 @@ Show
 
 Show
     Class Gems
+    BaseType "Empower"
     SetTextColor 0 204 255
 
+Hide
+	Class Gems
 
-#Field 4, Uniques, Jewels and Rares
+
+#Field 4, Uniques, Jewels
 Show
     Rarity Unique
     
 Show
     Class Jewel
+    Rarity Rare
     BaseType "Cobalt Jewel"
     SetBackgroundColor 29 43 75
 
 Show
     Class Jewel
+    Rarity Rare
     BaseType "Crimson Jewel"
     SetBackgroundColor 75 29 35
 
 Show
     Class Jewel
+    Rarity Rare
     BaseType "Viridian Jewel"
     SetBackgroundColor 35 75 29
 
+Show 
+	Class Abyss Jewel
+	Rarity Rare
+
+
 #Maps
 Show
-    BaseType "Ancient Reliquary Key" "Breachstone"
+    Class "Misc Map Items"
     PlayAlertSound 2
     SetFontSize 30
-    SetTextColor 191 91 0   
+    SetTextColor 191 91 0
+
+Show
+    Class Maps
+    ElderMap True
+    PlayAlertSound 2 100
+    SetFontSize 40
+    MinimapIcon 0 White Circle
+
+Show
+    Class Maps
+    ShapedMap True
+    PlayAlertSound 2 100
+    SetFontSize 40
+    MinimapIcon 0 White Circle
     
 Show
     Class Maps
-    PlayAlertSound 2
-    SetFontSize 40
+    PlayAlertSound 2 50
+    SetFontSize 35
+    MinimapIcon 0 White Circle
 
 Show
-    Class Maps "Map Fragments"
+    Class "Map Fragments"
+    SetFontSize 35
+    PlayEffect Purple
 
-#75+ Regal
 Show
-    Rarity Rare
-    ItemLevel >= 75
+    Class "Pantheon Soul"
+
+#Field 5, Flasks
+Show
+	Class Utility Flasks
+    BaseType "Amethyst" "Diamond" "Granite" "Jade" "Quartz" "Quicksilver" "Ruby" "Sapphire" "Topaz"
+    SetBackgroundColor 40 40 40
+
+Hide
+	BaseType "Flask"
+
+#Field 6, Mapping Configuration
+#Jewelry
+Show
+	ItemLevel >= 84
+	Rarity Rare
+	BaseType "Onyx Amulet" "Diamond Ring" "Two-Stone Ring"
+	SetBorderColor 255 0 204 200
+
+Show
+	ItemLevel >= 84
+	Rarity Rare
+	BaseType "Ruby Ring" "Sapphire Ring" "Topaz Ring" "Prismatic" "Unset Ring" "Gold Ring" "Citrine Amulet" "Turquoise Amulet" "Agate Amulet" "Coral Ring" "Moonstone Ring" "Leather Belt" "Heavy Belt" "Amber Amulet" "Jade Amulet" "Lapis Amulet" "Rustic Sash"
+	SetBorderColor 255 0 204 200
+
+Show
+	ItemLevel >= 75
+	Rarity Rare
+	Class Rings Amulets Belts
+	BaseType "Iron Ring" "Paua Ring" "Moonstone Ring" "Amethyst Ring" "Chain Belt" "Cloth Belt" "Studded Belt" "Coral Amulet" "Paua Amulet"
+	SetBorderColor 0 204 255 200
+
+Show 
+	Rarity <= Rare
+	BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt"
+	SetBorderColor 0 204 255 200
+
+Show
+    Rarity < Unique
+    BaseType "Talisman"
     SetBorderColor 0 204 255 200
 
-#60+ Chaos
+
+#Shaper
 Show
-    ItemLevel >= 60
+	ShaperItem True
+	Rarity Rare
+	SetBorderColor 255 0 204
+
+#Elder
+Show
+	ElderItem True
+	Rarity Rare
+	SetBorderColor 255 0 204
+
+#Super Nice Bases
+Show
     Rarity Rare
+    BaseType "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    SetBorderColor 0 204 255 200
+
+#Top Tier Crafting Base
+Show
+	ItemLevel >= 83
+	Rarity Rare
+	BaseType "Titan Gauntlets" "Slink Gloves" "Royal Burgonet" "Titan Greaves" "Slink Boots" "Hubris Circlet" "Vaal Axe" "Coronal Maul" "Exquisite Blade" "Fleshripper" "Harbinger Bow" "Gemini Claw" "Ambusher" "Siege Axe" "Harpy Rapier" "Demon Dagger" "Skean" "Spiraled Foil" "Jewelled Foil" "Profane Wand" "Sambar Sceptre" "Void Sceptre" "Imbued Wand" "Pinnacle Tower Shield" "Kris" "Prismatic" "Astral Plate" "Assassin's Garb" "Saintly Chainmail" "Harmonic Spirit Shield" "Fossilised Spirit Shield" "Titanium Spirit Shield" "Sorcerer Boots" "Sorcerer Gloves" "Vaal Regalia" "Eternal Burgonet" "Lion Pelt" "Colossal Tower Shield"
+	SetFontSize 35
+	SetBorderColor 255 255 255 200
+
+#T1 Rare Item
+Show
+	ItemLevel >= 65
+	Rarity Rare
+	BaseType "Imperial Claw" "Gemini Claw" "Imbued Wand" "Platinum Kris" "Jewelled Foil" "Spiraled Foil" "Corsair Sword" "Titan Gauntlets" "Lion Pelt" "Slink Boots" "Titan Greaves" "Royal Burgonet" "Slink Gloves" "Hubris Circlet" "Fossilised Spirit Shield" "Titanium Spirit Shield" "Crusader Buckler" "Eternal Burgonet" "Goliath Greaves" "Vaal Gauntlets" "Siege Axe" "Opal Sceptre" "Void Sceptre" "Astral Plate" "Archon Kite Shield"
+	SetBorderColor 0 204 255 200
+
+#T2 Rare Item
+Show
+    ItemLevel >= 65
+    Rarity Rare
+    BaseType "Terror Claw" "Eye Gouger" "Tornado Wand" "Opal Wand" "Kris" "Vaal Rapier" "Fancy Foil" "Dragoon Sword" "Profane Wand" "Skean" "Ambusher" "Vaal Axe" "Harbinger Bow" "Vaal Sceptre" "Eternal Sword" "Behemoth Mace" "Vaal Hatchet" "Runic Hatchet" "Sambar Sceptre" "Crusader Boots" "Nightmare Bascinet" "Murder Boots" "Dragonscale Boots" "Vaal Greaves" "Stealth Boots" "Murder Mitts" "Dragonscale Gauntlets" "Crusader Gloves" "Praetor Crown" "Deicide Mask" "Sinner Tricorne" "Arcanist Slippers" "Arcanist Gloves" "Mind Cage" "Sorcerer Boots" "Sorcerer Gloves" "Harmonic Spirit Shield" "Supreme Spiked Shield" "Shagreen Boots" "Imperial Buckler" "Ancient Greaves" "Ancient Gauntlets" "Ezomyte Burgonet" "Vaal Spirit Shield" "Glorious Plate" "Spike-Point Arrow Quiver" "Vaal Regalia" "Elegant Round Shield" "Pinnacle Tower Shield" "Assassin's Garb" "Broadhead Arrow Quiver" "Mosaic Kite Shield" "Colossal Tower Shield" "Cardinal Round Shield"
     SetBorderColor 255 204 0 200
-#Remove this section if you don't want ilvl highlighting for Chaos/Regal recipe.
 
 Hide
     Rarity Rare
 
-
-#Field 5, Flasks
-Show
-    BaseType "Flask"
-    BaseType "Amethyst" "Diamond" "Granite" "Jade" "Quartz" "Quicksilver" "Ruby" "Sapphire" "Topaz"
-    SetBackgroundColor 40 40 40
-
-Show
-    BaseType "Flask"
-    Quality >= 4
-    SetBackgroundColor 40 40 40
-
-#Fade flasks not used for leveling
-Show
-    BaseType Flask
-    ItemLevel >= 35
-    BaseType Small Large Medium Greater Grand
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-Show
-    BaseType Flask
-    ItemLevel >= 42
-    BaseType Giant Colossal Sacred
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-Show
-    BaseType Flask
-    ItemLevel >= 55
-    BaseType Hallowed Sanctified
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-Show
-    BaseType Flask
-    ItemLevel >= 68
-    BaseType Divine Eternal
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-Show
-    BaseType Flask
-
-
-#Field 6, Mapping Configuration
-#Quality Items
-Show
-    Quality 20
-
+#Field 7, ETC
 #Divination Cards
+Show
+    Class "Divination"
+    BaseType "Abandoned Wealth" "Heterochromia" "House of Mirrors" "Hunter's Reward" "Immortal Resolve" "Last Hope" "Mawr Blaidd" "Polymath" "Pride Before the Fall" "Spark and the Flame" "The Artist" "The Brittle Emperor" "The Celestial Justicar" "The Celestial Stone" "The Doctor" "The Dragon's Heart" "The Enlightened" "The Fiend" "The Formless Sea" "The Hunger" "The Immortal" "The Iron Bard" "The King's Heart" "The Last One Standing" "The Master" "The Mayor" "The Offering" "The Professor" "The Queen" "The Saint's Treasure" "The Samurai's Eye" "The Sephirot" "The Spark and the Flame" "The Undaunted" "The Valkyrie" "The Wind" "The Wolf" "The Wolven King's Bite" "The World Eater" "Wealth and Power" "Beauty Through Death" "The Endless Darkness" "Boon of the First Ones"
+    SetFontSize 40
+    SetBorderColor 0 204 255 230
+    PlayEffect Blue
+
+Show
+    Class "Divination"
+    BaseType "Bowyer's Dream" "Chaotic Disposition" "Emperor of Purity" "Left to Fate" "Perfection" "Saint's Treasure" "The Breach" "The Cartographer" "The Dapper Prodigy" "The Dragon" "The Dreamer" "The Ethereal" "The Hale Heart" "The Hoarder" "The Jeweller's Boon" "The Obscured" "The Polymath" "The Risk" "The Thaumaturgist" "The Throne" "The Undisputed" "The Valley of Steel Boxes" "The Vast" "The Void" "Time-Lost Relic" "The Wilted Rose" "The Price of Protection" "The Twilight Moon"
+    SetBorderColor 0 204 255 230
+    SetFontSize 35
+
 Show
     Class "Divination Card"
     PlayAlertSound 2
     SetBorderColor 0 204 255 230
 
-#Jewelry
-#Hide shit bases
-Hide
-    BaseType "Cloth Belt" "Studded Belt" "Paua Amulet" "Coral Amulet" "Paua Ring" "Iron Ring" "Moonstone Ring"
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-#Show rest
-Show
-    Rarity Normal
-    Class Rings Amulets Belts
-
-#Field 7, ETC
-Show
-    ItemLevel >= 68
-    LinkedSockets 4
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
-
-Show
-    LinkedSockets 4
-    SetBackgroundColor 0 0 0 200
-
-#Chisel Recipe
-Show
-    Rarity Normal
-    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
-Show
-    Rarity Magic
-    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
-    Quality >= 12
-
-
 #Field 8, Fade the rest
 Hide
     Rarity Normal
-    SetTextColor 200 200 200 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
 
 Hide
     Rarity Magic
-    SetTextColor 136 136 255 180
-    SetBackgroundColor 0 0 0 180
-    SetFontSize 28
