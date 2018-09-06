@@ -12,6 +12,7 @@
 Show
     Class "Quest Items" "Labyrinth Item" "Labyrinth Trinket" "Labyrinth Map Item" "Incursion Item" "Delve Socketable Currency"
     SetTextColor 255 0 0
+    MinimapIcon 0 Red Triangle
 
 
 #Field 1, GGm8
@@ -56,16 +57,17 @@ Show
 
 Show
 	Class Currency
-	BaseType "Chaos Orb" "Regal Orb" "Blessed Orb" "Vaal Orb"
+	BaseType "Chaos Orb" "Regal Orb" "Vaal Orb" "Gemcutter's Prism" "Master Cartographer's Sextant" "Journeyman Cartographer's Sextant" "Harbinger's Orb" "Ancient Orb" "Apprentice Cartographer's Sextant"
+    SetFontSize 45
 	SetTextColor 0 255 0
 	SetBorderColor 0 255 0
 	SetFontSize 35
-	PlayAlertSound 5 50
+	PlayAlertSound 5 100
 	PlayEffect Green
 
 Show
 	Class Currency
-	BaseType "Orb of Fusing" "Orb of Alchemy" "Cartographer's Chisel"
+	BaseType "Orb of Fusing" "Orb of Alchemy" "Cartographer's Chisel" "Blessed Orb" "Engineer's Orb" "Orb of Horizons" "Orb of Binding" "Bestiary Orb" "Orb of Scouring" "Orb of Regret"
 	SetTextColor 0 255 0
 	SetBorderColor 0 255 0
 	PlayAlertSound 5 50
@@ -134,18 +136,38 @@ Show
 
 #Maps
 Show
-    BaseType "Ancient Reliquary Key" "Breachstone" "Timeworn Reliquary Key"
+    Class "Misc Map Items"
     PlayAlertSound 2
     SetFontSize 30
-    SetTextColor 191 91 0   
+    SetTextColor 191 91 0
+
+Show
+    Class Maps
+    ElderMap True
+    PlayAlertSound 2 100
+    SetFontSize 40
+    MinimapIcon 0 White Circle
+
+Show
+    Class Maps
+    ShapedMap True
+    PlayAlertSound 2 100
+    SetFontSize 40
+    MinimapIcon 0 White Circle
     
 Show
     Class Maps
     PlayAlertSound 2 50
-    SetFontSize 40
+    SetFontSize 35
+    MinimapIcon 0 White Circle
 
 Show
-    Class Maps "Map Fragments"
+    Class "Map Fragments"
+    SetFontSize 35
+    PlayEffect Purple
+
+Show
+    Class "Pantheon Soul"
 
 #Field 5, Flasks
 Show
@@ -179,8 +201,14 @@ Show
 
 Show 
 	Rarity <= Rare
-	BaseType "Steel Ring" "Opal Ring"
+	BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt"
 	SetBorderColor 0 204 255 200
+
+Show
+    Rarity < Unique
+    BaseType "Talisman"
+    SetBorderColor 0 204 255 200
+
 
 #Shaper
 Show
@@ -193,6 +221,12 @@ Show
 	ElderItem True
 	Rarity Rare
 	SetBorderColor 255 0 204
+
+#Super Nice Bases
+Show
+    Rarity Rare
+    BaseType "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    SetBorderColor 0 204 255 200
 
 #Top Tier Crafting Base
 Show
@@ -221,6 +255,19 @@ Hide
 
 #Field 7, ETC
 #Divination Cards
+Show
+    Class "Divination"
+    BaseType "Abandoned Wealth" "Heterochromia" "House of Mirrors" "Hunter's Reward" "Immortal Resolve" "Last Hope" "Mawr Blaidd" "Polymath" "Pride Before the Fall" "Spark and the Flame" "The Artist" "The Brittle Emperor" "The Celestial Justicar" "The Celestial Stone" "The Doctor" "The Dragon's Heart" "The Enlightened" "The Fiend" "The Formless Sea" "The Hunger" "The Immortal" "The Iron Bard" "The King's Heart" "The Last One Standing" "The Master" "The Mayor" "The Offering" "The Professor" "The Queen" "The Saint's Treasure" "The Samurai's Eye" "The Sephirot" "The Spark and the Flame" "The Undaunted" "The Valkyrie" "The Wind" "The Wolf" "The Wolven King's Bite" "The World Eater" "Wealth and Power" "Beauty Through Death" "The Endless Darkness" "Boon of the First Ones"
+    SetFontSize 40
+    SetBorderColor 0 204 255 230
+    PlayEffect Blue
+
+Show
+    Class "Divination"
+    BaseType "Bowyer's Dream" "Chaotic Disposition" "Emperor of Purity" "Left to Fate" "Perfection" "Saint's Treasure" "The Breach" "The Cartographer" "The Dapper Prodigy" "The Dragon" "The Dreamer" "The Ethereal" "The Hale Heart" "The Hoarder" "The Jeweller's Boon" "The Obscured" "The Polymath" "The Risk" "The Thaumaturgist" "The Throne" "The Undisputed" "The Valley of Steel Boxes" "The Vast" "The Void" "Time-Lost Relic" "The Wilted Rose" "The Price of Protection" "The Twilight Moon"
+    SetBorderColor 0 204 255 230
+    SetFontSize 35
+
 Show
     Class "Divination Card"
     PlayAlertSound 2
