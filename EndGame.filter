@@ -1,0 +1,242 @@
+#Field 0, Quest
+
+#Field 1, GGm8
+
+#Field 2, Currency/Recipe
+
+#Field 3, Gems
+
+#Field 4, Uniques and Rares
+
+#Field 5, Flasks
+
+#Field 6, Mapping Configuration
+
+#Field 7, ETC
+
+#Field 8, Fade the rest
+
+
+#Field 0, Quest
+Show
+    Class "Quest Items" "Labyrinth Item" "Labyrinth Trinket" "Labyrinth Map Item" "Incursion Item" "Delve Socketable Currency"
+    SetTextColor 255 0 0
+
+
+#Field 1, GGm8
+Show
+    Class "Fishing Rod"
+    SetTextColor 255 0 204
+    PlayAlertSound 5 100
+
+Show
+    LinkedSockets 6
+    SetTextColor 255 0 204
+    PlayAlertSound 5 100
+
+Show
+    BaseType "Mirror of Kalandra" "Rhoa Feather" "Divine Orb" "Exalted Orb"
+    SetTextColor 255 0 204
+    PlayAlertSound 5 100
+    SetFontSize 40
+
+
+#Field 2, Currency/Recipe
+Show
+    BaseType "Portal Scroll" "Scroll of Wisdom"
+    SetTextColor 255 255 255
+
+Show
+    Class Currency
+    BaseType "Essence" "Remnant of Corruption"
+    SetTextColor 30 144 255 
+
+Show
+    Class Currency
+    SetTextColor 0 255 0
+    PlayAlertSound 5 50
+
+Show
+    LinkedSockets 5
+    SetBorderColor 0 204 255 200
+    PlayAlertSound 5 50
+
+Show
+    Sockets 6
+    SetBorderColor 0 204 255 200
+    PlayAlertSound 5 50
+
+Show
+    SocketGroup RGB
+    SetBorderColor 0 204 255 200
+
+
+#Field 3, Gems
+Show
+    Class Gem
+    Quality > 0
+    SetBorderColor 0 204 255
+    SetTextColor 0 204 255
+
+Show
+    Class Gems
+    SetTextColor 0 204 255
+
+
+#Field 4, Uniques, Jewels and Rares
+Show
+    Rarity Unique
+    
+Show
+    Class Jewel
+    BaseType "Cobalt Jewel"
+    SetBackgroundColor 29 43 75
+
+Show
+    Class Jewel
+    BaseType "Crimson Jewel"
+    SetBackgroundColor 75 29 35
+
+Show
+    Class Jewel
+    BaseType "Viridian Jewel"
+    SetBackgroundColor 35 75 29
+
+#Maps
+Show
+    BaseType "Ancient Reliquary Key" "Breachstone"
+    PlayAlertSound 2
+    SetFontSize 30
+    SetTextColor 191 91 0   
+    
+Show
+    Class Maps
+    PlayAlertSound 2
+    SetFontSize 40
+
+Show
+    Class Maps "Map Fragments"
+
+#75+ Regal
+Show
+    Rarity Rare
+    ItemLevel >= 75
+    SetBorderColor 0 204 255 200
+
+#60+ Chaos
+Show
+    ItemLevel >= 60
+    Rarity Rare
+    SetBorderColor 255 204 0 200
+#Remove this section if you don't want ilvl highlighting for Chaos/Regal recipe.
+
+Hide
+    Rarity Rare
+
+
+#Field 5, Flasks
+Show
+    BaseType "Flask"
+    BaseType "Amethyst" "Diamond" "Granite" "Jade" "Quartz" "Quicksilver" "Ruby" "Sapphire" "Topaz"
+    SetBackgroundColor 40 40 40
+
+Show
+    BaseType "Flask"
+    Quality >= 4
+    SetBackgroundColor 40 40 40
+
+#Fade flasks not used for leveling
+Show
+    BaseType Flask
+    ItemLevel >= 35
+    BaseType Small Large Medium Greater Grand
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Show
+    BaseType Flask
+    ItemLevel >= 42
+    BaseType Giant Colossal Sacred
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Show
+    BaseType Flask
+    ItemLevel >= 55
+    BaseType Hallowed Sanctified
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Show
+    BaseType Flask
+    ItemLevel >= 68
+    BaseType Divine Eternal
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Show
+    BaseType Flask
+
+
+#Field 6, Mapping Configuration
+#Quality Items
+Show
+    Quality 20
+
+#Divination Cards
+Show
+    Class "Divination Card"
+    PlayAlertSound 2
+    SetBorderColor 0 204 255 230
+
+#Jewelry
+#Hide shit bases
+Hide
+    BaseType "Cloth Belt" "Studded Belt" "Paua Amulet" "Coral Amulet" "Paua Ring" "Iron Ring" "Moonstone Ring"
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+#Show rest
+Show
+    Rarity Normal
+    Class Rings Amulets Belts
+
+#Field 7, ETC
+Show
+    ItemLevel >= 68
+    LinkedSockets 4
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Show
+    LinkedSockets 4
+    SetBackgroundColor 0 0 0 200
+
+#Chisel Recipe
+Show
+    Rarity Normal
+    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+Show
+    Rarity Magic
+    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+    Quality >= 12
+
+
+#Field 8, Fade the rest
+Hide
+    Rarity Normal
+    SetTextColor 200 200 200 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
+
+Hide
+    Rarity Magic
+    SetTextColor 136 136 255 180
+    SetBackgroundColor 0 0 0 180
+    SetFontSize 28
